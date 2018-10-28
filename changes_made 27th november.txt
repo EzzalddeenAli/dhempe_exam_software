@@ -1,0 +1,12 @@
+A PHP Error was encountered
+Severity: Notice
+Message: Undefined variable: max_grace_for_entitlement
+Filename: controllers/grace_controller2.php
+Line Number: 545
+
+
+A PHP Error was encountered
+Severity: Notice
+Message: Undefined variable: marks_per_sub
+Filename: controllers/grace_controller2.php
+Line Number: 553
