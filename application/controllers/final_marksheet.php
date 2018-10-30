@@ -346,8 +346,7 @@ $mpdf->WriteHTML('<div style="text-align: center; font-size:18px; padding-bottom
 							$mpdf->WriteHTML('<td colspan="3">'.$row4->sub_name_display.'</td>');
 						}
 						else{
-							$mpdf->WriteHTML('<td colspan="3">'.$row4->sub_name_display.'</td>');
-							$mpdf->WriteHTML('<td></td>');
+							$mpdf->WriteHTML('<td colspan="4">'.$row4->sub_name_display.'</td>');
 						}
 					}
 				}
@@ -360,10 +359,10 @@ $mpdf->WriteHTML('<div style="text-align: center; font-size:18px; padding-bottom
 						<td>ISA</td>
 						<td>SEE</td>
 					');
-					$mpdf->WriteHTML('<td>Total</td');
 					if($row2->practicle != -1){
 						$mpdf->WriteHTML('<td>Practical</td');
 					}
+					$mpdf->WriteHTML('<td>Total</td');
 				}
 				$mpdf->WriteHTML('</tr>');
 				
@@ -381,23 +380,6 @@ $mpdf->WriteHTML('<div style="text-align: center; font-size:18px; padding-bottom
 					if($row2->pract_abs == 'A'){
 						$_13practicle_marks = $row2->pract_abs;
 					}
-					
-					//modified code 17 april 2013
-					//commented by simone since 
-					/* if($row2->isa_abs == 'A'){
-						$mpdf->WriteHTML('
-							<td>A</td>
-							<td>A</td>
-						');
-						$total_temp =' A';
-					}else{
-						$mpdf->WriteHTML('
-							<td>'.$row2->internal.'</td>
-							<td>'.$row2->theory.'</td>
-						');
-						$total_temp=$row2->internal+$row2->theory;
-						$temp_final_total +=$row2->internal+$row2->theory;
-					} */
 					
 					if($row2->isa_abs == 'A' && $row2->see_abs == 'A'){
 						$mpdf->WriteHTML('
@@ -453,12 +435,6 @@ $mpdf->WriteHTML('<div style="text-align: center; font-size:18px; padding-bottom
 						
 						}
 					
-					if($row2->gen_the_pract_sym != ""){
-						$mpdf->WriteHTML('<td>'.$total_temp.' '.$display_theory_grace.'</td');
-					}
-					else{
-						$mpdf->WriteHTML('<td>'.$total_temp.' '.$display_theory_grace.'</td');
-					}
 					
 					if($row2->pract_abs == 'A'){
 						if($row2->practicle != -1){
@@ -474,6 +450,13 @@ $mpdf->WriteHTML('<div style="text-align: center; font-size:18px; padding-bottom
 						}
 					}
 					//$temp_final_total +=$row2->internal+$row2->theory+$row2->practicle;
+					
+					if($row2->gen_the_pract_sym != ""){
+						$mpdf->WriteHTML('<td>'.$total_temp.' '.$display_theory_grace.'</td');
+					}
+					else{
+						$mpdf->WriteHTML('<td>'.$total_temp.' '.$display_theory_grace.'</td');
+					}
 				}
 				$mpdf->WriteHTML('<td>'.$temp_final_total.' '.$grace1.' '.$grace.'</td>');
 				$mpdf->WriteHTML('<td>'.$final_result.'</td>');
