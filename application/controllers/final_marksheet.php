@@ -439,7 +439,7 @@ $mpdf->WriteHTML('<div style="text-align: center; font-size:18px; padding-bottom
 					if($row2->pract_abs == 'A'){
 						if($row2->practicle != -1){
 							$mpdf->WriteHTML('<td>A</td');
-							$total_temp ='A';
+							//$total_temp ='A';
 							$temp_final_total +=0;
 						}
 					}else{
