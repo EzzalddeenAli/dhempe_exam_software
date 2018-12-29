@@ -1,8 +1,13 @@
 <?php
 
-				'<h3 style="text-align:center;">Subject : '.$row->sub_name.''.nbs(15).'I.S.A. :- '.$row->internal_marks.''.nbs(15).'</h3>');
-				
-				$mpdf->WriteHTML('
+class final_marksheet extends CI_Controller
+{
+    //select stream and semester for generate final marksheet
+    public function print_marksheet()
+    {
+        $data['type'] = 'all';
+        $this->load->view('printmarksheet', $data);
+    }
     public function now_eligible_print_marksheet()
     {
         $data['type'] = 'now_eligible';
@@ -93,6 +98,7 @@
 
         foreach ($subject_id as $row) {
 
+            //increase execution time
             set_time_limit(0);
 
             //get all marks related to pr number and do calculation
