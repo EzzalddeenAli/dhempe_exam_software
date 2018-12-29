@@ -2,24 +2,24 @@
 
 
 	<script type="text/javascript">
-		
-		
+
+
 		function ch()
 		{
 		if($('#year').val()=="")
 			{ alert('please Choose year');
-			return false;	
+			return false;
 			}
 			else if($('#part').val()=="")
 			{ alert('please Choose Part');
-			return false;	
+			return false;
 			}
 			else
 			{$('#myForm').submit();}
 		}
-		
-		
-		
+
+
+
 	</script>
 
 <?php
@@ -29,9 +29,13 @@
 		"2015"=>"2015",
 		"2016"=>"2016",
 		"2017"=>"2017",
-		
+		"2018"=>"2018",
+		"2019"=>"2019",
+		"2020"=>"2020",
+
+
 	);
-	
+
 	$part=array(
 		"1"=>"1",
 		"2"=>"2",
@@ -43,11 +47,11 @@
 		 <div class="page-heading" align="center">
            		<h3>Create New Academic Year</h3>
          	</div>
-			
+
 			<div class="page-heading" align="center">
            		<h2><?php if($m!=''){ echo $m;}?></h2>
          	</div>
-			
+
 		 <table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="<?php echo base_url();?>assets/images/shared/side_shadowleft.jpg" width="20" height="150" alt="" /></th>
@@ -61,13 +65,13 @@
 		<td>
 		<!--  start content-table-inner ...................................................................... START -->
 		<div id="content-table-inner">
-		
-			<!--  start table-content  -->
-			<div id="table-content">									
 
-		 
-		 
-		 
+			<!--  start table-content  -->
+			<div id="table-content">
+
+
+
+
 		 <div style="padding-top:50px;">
 		<?php $form_id=array('id'=>'myForm'); ?>
 		<b>Note: Input Year will be 2014 for Academic Year 2014-15 and part will be 1 for 1st semester and 2 for 2nd semester</b>
@@ -76,19 +80,19 @@
 		$js ='id="year" class="my_inp_form" style="width:100px;"';
 		?>
 			<h4>
-				Input year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo form_dropdown('year',$year,"",$js);?>     
+				Input year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo form_dropdown('year',$year,"",$js);?>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			
-		        Part&nbsp;&nbsp;&nbsp;&nbsp;<?php 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		        Part&nbsp;&nbsp;&nbsp;&nbsp;<?php
 				$js ='id="part" class="my_inp_form" style="width: 40px;"';
-				
+
 				echo form_dropdown('part',$part,'',$js);?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	    <?php //echo br(2); ?>
 				<?php
 
 				$j="class='my_button_submit' onclick='ch()'";
 				echo form_button('button','ADD',$j,$j); ?>
-			</h4>	
-			
+			</h4>
+
 			<?php echo form_close(); ?>
 			</div></div>
 	</div>
@@ -110,6 +114,5 @@
 	</div>
 
 	</div>
-</div><br><br><br><br><br><br><br><br>	
+</div><br><br><br><br><br><br><br><br>
 <?php include_once('foot.php'); ?>
-			

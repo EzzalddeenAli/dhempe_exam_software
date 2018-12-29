@@ -1,6 +1,6 @@
 <?php include_once('head.php'); ?>
 
-<?php 
+<?php
 
 	if(isset($studentdetail)){
 		foreach($studentdetail as $row){
@@ -11,7 +11,7 @@
 			$gen=$row->gender;
 			$sports_cat=$row->sports_category;
 			$sports_rew=$row->sports_rewards;
-			$entitle_grace=$row->entitlement_grace_alloc;
+			$entitle_grace=$row->ncc_nss_grace_alloc;//entitlement_grace_alloc; // TODO: change alloc
 			$sports_grace=$row->sports_grace_alloc;
 			$subj_2=$row->subj_2;
 			$subj_3=$row->subj_3;
@@ -36,15 +36,15 @@
 		$set_type=false;
 		$set_type1=true;
 	}
-	
-	
+
+
 	if($entitle_grace > 0){
 		$ok=true;
 	}
 	else{
 		$ok=false;
 	}
-	
+
 	//get pr number from database
 	if(!isset($pr)){
 		$reg_number=array(
@@ -59,7 +59,7 @@
 			'class'=>'my_inp_form'
 		);
 	}
-	
+
 	//get name from database
 	if(!isset($name)){
 		$data=array(
@@ -76,7 +76,7 @@
 			'class'=>'my_inp_form'
 		);
 	}
-	
+
 	//get seat number from database
 	if(!isset($seat)){
 		$seat_data=array(
@@ -93,7 +93,7 @@
 			'class'=>'my_inp_form'
 		);
 	}
-	
+
 	//get sports data from database
 	if($sports_cat != ""){
 		$sel_option=$sports_cat;
@@ -112,14 +112,14 @@
 			'id'=>'sports_test'
 		);
 	}
-	
+
 	//subject is set in database or not (Editing Student)
 	if(!isset($subj_2)){
-		$subj2Selected="2A";	
+		$subj2Selected="2A";
 	}else{
 		$subj2Selected=$subj_2;
 	}
-	
+
 	if(!isset($subj_3)){
 		$subj3Selected="3A1";
 	}else{
@@ -130,7 +130,7 @@
 	}else{
 		$subj4Selected=$subj_4;
 	}
-	
+
 
 
 	$options=array(
@@ -141,7 +141,7 @@
 		"D2"=>"Zonal Inter-University Championships",
 		"E"=>"Inter-Collegiate Tournaments"
 	);
-	
+
 	$rewards=array(
 		"participation"=>"Participation",
 		"winner"=>"Winner",
@@ -158,14 +158,14 @@
 		"2F"=>"Portuguese",
 		"2G"=>"Philosophy"
 	);
-	
+
 	$subject3=array(
 		"3A1/3B1"=>"Economics & History",
 		"3A1/3C1"=>"Economics and Philosophy",
 		"3D1/3B1"=>"English and History",
 		"3D1/3C1"=>"English and philosophy"
 	);
-	
+
 	$subject4=array(
 		"4A"=>"Hindi",
 		"4B"=>"Konkani",
@@ -184,41 +184,41 @@
 		if (x==null || x==""){
   			alert("Enter PR Number");
   			return false;
-  		} 
-		var letters = /^[0-9]+$/;  
-   		if(x.match(letters))  {  
-		}else{  
-     		alert("Enter Number Only / Don\'t Enter Characters");  
-     		return false;  
-     	}  
-		
+  		}
+		var letters = /^[0-9]+$/;
+   		if(x.match(letters))  {
+		}else{
+     		alert("Enter Number Only / Don\'t Enter Characters");
+     		return false;
+     	}
+
 		//seat Number
 		var x=document.forms["myForm"]["Seat"].value;
 		if (x==null || x==""){
   			alert("Enter Seat Number");
   			return false;
-  		} 
-		var letters = /^[0-9]+$/;  
-   		if(x.match(letters))  {  
-		}else{  
-     		alert("Enter Number Only / Don\'t Enter Characters");  
-     		return false;  
-     	}  
-		
+  		}
+		var letters = /^[0-9]+$/;
+   		if(x.match(letters))  {
+		}else{
+     		alert("Enter Number Only / Don\'t Enter Characters");
+     		return false;
+     	}
+
 		//Name
 		var x=document.forms["myForm"]["Name"].value;
 		if (x==null || x==""){
   			alert("Enter Name");
   			return false;
-  		} 
-		var letters = /^[A-Za-z\s]+$/;  
-   		if(x.match(letters)){}  
-   		else{  
-     		alert("Enter Characters only for Name");  
-     		return false;  
-     	}  
+  		}
+		var letters = /^[A-Za-z\s]+$/;
+   		if(x.match(letters)){}
+   		else{
+     		alert("Enter Characters only for Name");
+     		return false;
+     	}
 	}
-		
+
 </script>
 <div class="content">
 	 	<div class="gadget">
@@ -226,7 +226,7 @@
            		<h3 align="center">Stream : B.A. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Semester : 1</h3>
          	</div>
 		 	<div class="gadgetblock">
-			
+
 			<table border="0" width="100%" cellpadding="0" cellspacing="0" id="content-table">
 	<tr>
 		<th rowspan="3" class="sized"><img src="<?php echo base_url();?>assets/images/shared/side_shadowleft.jpg" width="20" height="150" alt="" /></th>
@@ -239,22 +239,22 @@
 		<td id="tbl-border-left"></td>
 		<td>
 		<div id="content-table-inner">
-		
+
 			<!--  start table-content  -->
-			<div id="table-content">									
+			<div id="table-content">
 
 		   		<?php $form_data=array('name'=>"myForm","id"=>"formData"); ?>
 				<?php echo form_open('home/editSaveStudentDetail',$form_data); $js ='class="my_select"'; ?>
-		
+
 				<input type="hidden" value="<?php echo  "ba_student_detail_sem_1"; ?>" name="tbl_name" />
 				<input type="hidden" value="750" name="MaxaggMark" />
 				<input type="hidden" value="<?php echo $pr;  ?>" name="pr" />
 				<input type="hidden" value="<?php echo $seat;  ?>" name="seat_old" />
 				<input style="display:none;" value="<?php echo $type;?>" name="type_old" />
-				
+
 				<ol>
              		<li>
-					
+
 					<h4>Fresh <?php echo form_radio('type','0',$set_type); ?>
 							Supplementary <?php echo form_radio('type','1',$set_type1); ?>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blocked:&nbsp;
@@ -263,34 +263,34 @@
 							{echo '<input type="checkbox" name="block" id="block" value=1>';}
 
 							?>
-							
-							 
-							
+
+
+
 							</h4>
 							<br><br>
 						<div style="float:left;">
 							<h4>Name <?php echo form_input($data); ?></h4>
 						</div>
-				
+
 						<div style="float:left; margin-left:50px;">
 							<h4>pr_number <?php echo form_input($reg_number); ?></h4>
 						</div>
-				
+
 						<div style="float:left; margin-left:50px;">
 							<h4>Seat_number <?php echo form_input($seat_data); ?></h4>
 						</div>
-						
+
 						<div style="float: left; margin-left:50px;">
 							<h4>Male <?php echo form_radio('gender','M',$set); ?>
 							Female <?php echo form_radio('gender','F',$set1); ?></h4>
 						</div>
 					</li>
-					
-					<li>	
+
+					<li>
 					<h4>
 			  			<div style="clear:both;"><div><br><br>
-							<div style="float:left;"> 
-								NSS/NCC <?php echo form_checkbox('nss','1',$ok); ?>	
+							<div style="float:left;">
+								NSS/NCC <?php echo form_checkbox('nss','1',$ok); ?>
 								Sports <?php echo form_checkbox('sports','1',$tick_sports); ?>
 								Category<?php echo form_dropdown('cat',$options,$sel_option,$js); ?>
 								Rewards<?php echo form_dropdown('rewards',$rewards,$se_rew,$js); ?>
@@ -298,13 +298,13 @@
 						</div>
 					</h4>
 					</li>
-					
+
 					<li><br><br>
 			  			<h4>
 			  			<div style="margin-top:20px; clear: both;">
 							Selected Subject
 						</div>
-					
+
 						<div style="margin-top:20px;">
 							<div style="float:left;">
 								<?php echo form_radio('subject1','1A','TRUE'); ?>Spoken English
@@ -319,7 +319,7 @@
 								<?php echo form_radio('subject8','7A','TRUE'); ?> Environmental Education
 							</div>
 						</div>
-						
+
 						<div style="clear:both;margin-top:65px;">
 							<div style="float:left;">
 								Another Language Paper  <?php echo form_dropdown('subject2',$subject2,$subj2Selected,$js); ?>
@@ -333,7 +333,7 @@
 						</div>
 					</li>
 			 		<li>
-			  		<div style="clear:both;">		
+			  		<div style="clear:both;">
 				<input style="margin-top:20px;" id="p" type="submit" value="Save" onclick="return check();" class="my_button_submit"/>
 						<input id="refresh" type="button" value="Refresh" class="my_button_submit"/>
 						<input id="back" type="button" value="Back" class="my_button_submit"/>
@@ -342,7 +342,7 @@
 			 		</li>
 			  	</h4>
 			</ol>
-			
+
 			</div>
 			</td>
 		<td id="tbl-border-right"></td>
@@ -353,15 +353,15 @@
 		<th class="sized bottomright"></th>
 	</tr>
 	</table>
-			
-			
-			
+
+
+
 		</div>
-	</div>	
+	</div>
 </div>
 <?php echo form_close(); ?>
 
-		
+
 
 
 <?php include('foot.php'); ?>
@@ -371,7 +371,7 @@
 	$('#refresh').click(function(){
 		location.reload();
 	});
-	
+
 	$('#back').click(function(){
 		window.location='<?php echo base_url(); ?>index.php/home/editStudent';
 	});

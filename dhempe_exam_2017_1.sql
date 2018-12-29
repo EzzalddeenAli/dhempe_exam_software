@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2018 at 06:25 AM
+-- Generation Time: Nov 26, 2018 at 05:50 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -5054,7 +5054,6 @@ CREATE TABLE `ba_sub_sem_1` (
   `semester_marks` int(11) NOT NULL,
   `practical_marks` int(11) NOT NULL,
   `total` int(11) NOT NULL,
-  `Course Credit` int(30) NOT NULL,
   `minimum_theory` int(11) NOT NULL,
   `min_practical` int(11) NOT NULL,
   `max_agg_marks` int(11) NOT NULL DEFAULT '750',
@@ -5066,32 +5065,32 @@ CREATE TABLE `ba_sub_sem_1` (
 -- Dumping data for table `ba_sub_sem_1`
 --
 
-INSERT INTO `ba_sub_sem_1` (`sub_id`, `semester`, `sub_name`, `sub_name_display`, `internal_marks`, `semester_marks`, `practical_marks`, `total`, `Course Credit`, `minimum_theory`, `min_practical`, `max_agg_marks`, `paper_type`, `subject_type`) VALUES
-('1', 1, 'DSC Economics', 'DSC Economics', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('2', 1, 'DSC English', 'DSC English', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('3', 1, 'DSC History', 'DSC History', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('4', 1, 'DSC Philosophy', 'DSC Philosophy', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('5', 1, 'DSC Psychology', 'DSC Psychology', 15, 60, 25, 100, 4, 40, 0, 650, '1', 'DSC'),
-('6', 1, 'DSC Political Science', 'DSC Political Science', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('7', 1, 'DSC Konkani', 'DSC Konkani', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('8', 1, 'DSC Marathi', 'DSC Marathi', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('9', 1, 'DSC Hindi', 'DSC Hindi', 20, 80, -1, 100, 4, 40, 0, 650, '1', 'DSC'),
-('10', 1, 'AECC Env. Edu.', 'AECC Env. Edu.', 20, 80, -1, 100, 4, 40, 0, 650, '2', 'AECC'),
-('11', 1, 'AECC English', 'AECC English', 20, 80, -1, 100, 4, 40, 0, 650, '2', 'AECC'),
-('12', 1, 'AECC Hindi', 'AECC Hindi', 20, 80, -1, 100, 4, 40, 0, 650, '2', 'AECC'),
-('13', 1, 'AECC Marathi', 'AECC Marathi', 15, 60, 25, 100, 4, 40, 0, 650, '2', 'AECC'),
-('14', 1, 'AECC Konkani', 'AECC Konkani', 20, 80, -1, 100, 4, 40, 0, 650, '2', 'AECC'),
-('15', 1, 'GE Economics', 'GE Economics', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('16', 1, 'GE English', 'GE English', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('17', 1, 'GE History', 'GE History', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('18', 1, 'GE Philosophy', 'GE Philosophy', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('19', 1, 'GE Psychology', 'GE Psychology', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('20', 1, 'GE Political Science', 'GE Political Science', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('21', 1, 'GE Konkani', 'GE Konkani', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('22', 1, 'GE Marathi', 'GE Marathi', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('23', 1, 'GE Hindi', 'GE Hindi', 20, 80, -1, 100, 4, 40, 0, 650, '3', 'GE'),
-('24', 1, 'GE Computer Science', 'GE Computer Science', 15, 60, 25, 100, 4, 40, 0, 650, '3', 'GE'),
-('25', 1, 'CC English', 'CC English', 30, 120, -1, 150, 6, 60, 0, 650, '4', 'CC');
+INSERT INTO `ba_sub_sem_1` (`sub_id`, `semester`, `sub_name`, `sub_name_display`, `internal_marks`, `semester_marks`, `practical_marks`, `total`, `minimum_theory`, `min_practical`, `max_agg_marks`, `paper_type`, `subject_type`) VALUES
+('1', 1, 'DSC Economics', 'DSC Economics', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('2', 1, 'DSC English', 'DSC English', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('3', 1, 'DSC History', 'DSC History', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('4', 1, 'DSC Philosophy', 'DSC Philosophy', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('5', 1, 'DSC Psychology', 'DSC Psychology', 15, 60, 25, 100, 40, 0, 650, '1', 'DSC'),
+('6', 1, 'DSC Political Science', 'DSC Political Science', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('7', 1, 'DSC Konkani', 'DSC Konkani', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('8', 1, 'DSC Marathi', 'DSC Marathi', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('9', 1, 'DSC Hindi', 'DSC Hindi', 20, 80, -1, 100, 40, 0, 650, '1', 'DSC'),
+('10', 1, 'AECC Env. Edu.', 'AECC Env. Edu.', 20, 80, -1, 100, 40, 0, 650, '2', 'AECC'),
+('11', 1, 'AECC English', 'AECC English', 20, 80, -1, 100, 40, 0, 650, '2', 'AECC'),
+('12', 1, 'AECC Hindi', 'AECC Hindi', 20, 80, -1, 100, 40, 0, 650, '2', 'AECC'),
+('13', 1, 'AECC Marathi', 'AECC Marathi', 15, 60, 25, 100, 40, 0, 650, '2', 'AECC'),
+('14', 1, 'AECC Konkani', 'AECC Konkani', 20, 80, -1, 100, 40, 0, 650, '2', 'AECC'),
+('15', 1, 'GE Economics', 'GE Economics', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('16', 1, 'GE English', 'GE English', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('17', 1, 'GE History', 'GE History', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('18', 1, 'GE Philosophy', 'GE Philosophy', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('19', 1, 'GE Psychology', 'GE Psychology', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('20', 1, 'GE Political Science', 'GE Political Science', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('21', 1, 'GE Konkani', 'GE Konkani', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('22', 1, 'GE Marathi', 'GE Marathi', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('23', 1, 'GE Hindi', 'GE Hindi', 20, 80, -1, 100, 40, 0, 650, '3', 'GE'),
+('24', 1, 'GE Computer Science', 'GE Computer Science', 15, 60, 25, 100, 40, 0, 650, '3', 'GE'),
+('25', 1, 'CC English', 'CC English', 30, 120, -1, 150, 60, 0, 650, '4', 'CC');
 
 -- --------------------------------------------------------
 
@@ -8228,9 +8227,9 @@ INSERT INTO `bsc_student_marks_sem_1` (`sub_id`, `pr_number`, `isa_abs`, `see_ab
 ('3', 201703471, '', '', '', 19, 46, 46, 65, '', '', '', '', 'P', 0),
 ('3', 201703472, '', '', '', 17, 53, 39, 70, '', '', '', '', 'P', 0),
 ('3', 201704228, '', '', '', 13, 34, 37, 47, '', '', '', '', 'P', 0),
-('3', 201703473, '', '', '', 12, 42, 32, 54, '', '', '', '', 'P', 0),
-('3', 201703474, '', '', '', 9, 33, 31, 42, '', '', '', '', 'P', 0);
+('3', 201703473, '', '', '', 12, 42, 32, 54, '', '', '', '', 'P', 0);
 INSERT INTO `bsc_student_marks_sem_1` (`sub_id`, `pr_number`, `isa_abs`, `see_abs`, `pract_abs`, `internal`, `theory`, `practicle`, `total`, `gen_symbol`, `activity_symbol`, `gen_the_symbol`, `gen_the_pract_sym`, `pass_status`, `pract_total`) VALUES
+('3', 201703474, '', '', '', 9, 33, 31, 42, '', '', '', '', 'P', 0),
 ('3', 201703475, '', '', '', 15, 49, 41, 64, '', '', '', '', 'P', 0),
 ('3', 201703476, '', '', '', 14, 40, 44, 54, '', '', '', '', 'P', 0),
 ('3', 201703477, '', '', '', 13, 26, 36, 39, '', '', '', '', 'F', 0),
@@ -8959,9 +8958,9 @@ INSERT INTO `bsc_student_marks_sem_1` (`sub_id`, `pr_number`, `isa_abs`, `see_ab
 ('4', 201703410, '', '', '', 16, 46, 24, 62, '', '', '', '', 'P', 0),
 ('4', 201703481, '', '', '', 19, 44, 36, 63, '', '', '', '', 'P', 0),
 ('4', 201704229, '', '', '', 18, 76, 46, 94, '', '', '', '', 'P', 0),
-('4', 201703482, '', '', '', 19, 31, 43, 50, '', '', '', '', 'P', 0),
-('4', 201703483, '', '', '', 18, 29, 48, 47, '', '', '', '', 'P', 0);
+('4', 201703482, '', '', '', 19, 31, 43, 50, '', '', '', '', 'P', 0);
 INSERT INTO `bsc_student_marks_sem_1` (`sub_id`, `pr_number`, `isa_abs`, `see_abs`, `pract_abs`, `internal`, `theory`, `practicle`, `total`, `gen_symbol`, `activity_symbol`, `gen_the_symbol`, `gen_the_pract_sym`, `pass_status`, `pract_total`) VALUES
+('4', 201703483, '', '', '', 18, 29, 48, 47, '', '', '', '', 'P', 0),
 ('4', 201703411, '', '', '', 13, 23, 28, 36, '', '+ 4#', '+ 4#', '', 'P', 0),
 ('4', 201703484, '', '', '', 19, 36, 35, 55, '', '', '', '', 'P', 0),
 ('4', 201703485, '', '', '', 14, 37, 41, 51, '', '', '', '', 'P', 0),
@@ -10041,12 +10040,12 @@ INSERT INTO `bsc_student_marks_sem_2` (`sub_id`, `pr_number`, `isa_abs`, `see_ab
 ('14', 201703496, '', '', '', 11, 43, -1, 54, '', '', '', '', 'P', 0),
 ('14', 201703497, '', '', '', 19, 66, -1, 85, '', '', '', '', 'P', 0),
 ('14', 201703498, '', '', '', 20, 56, -1, 76, '', '', '', '', 'P', 0),
-('14', 201703499, '', '', '', 16, 75, -1, 91, '', '', '', '', 'P', 0),
+('14', 201703499, '', '', '', 16, 75, -1, 91, '', '', '', '', 'P', 0);
+INSERT INTO `bsc_student_marks_sem_2` (`sub_id`, `pr_number`, `isa_abs`, `see_abs`, `pract_abs`, `internal`, `theory`, `practicle`, `total`, `gen_symbol`, `activity_symbol`, `gen_the_symbol`, `gen_the_pract_sym`, `pass_status`, `pract_total`) VALUES
 ('14', 201703501, '', '', '', 20, 66, -1, 86, '', '', '', '', 'P', 0),
 ('14', 201703502, '', '', '', 14, 65, -1, 79, '', '', '', '', 'P', 0),
 ('14', 201703503, '', '', '', 13, 41, -1, 54, '', '', '', '', 'P', 0),
-('14', 201703504, '', '', '', 19, 52, -1, 71, '', '', '', '', 'P', 0);
-INSERT INTO `bsc_student_marks_sem_2` (`sub_id`, `pr_number`, `isa_abs`, `see_abs`, `pract_abs`, `internal`, `theory`, `practicle`, `total`, `gen_symbol`, `activity_symbol`, `gen_the_symbol`, `gen_the_pract_sym`, `pass_status`, `pract_total`) VALUES
+('14', 201703504, '', '', '', 19, 52, -1, 71, '', '', '', '', 'P', 0),
 ('14', 201703508, '', '', '', 14, 24, -1, 38, '', '', '', '', 'P', 0),
 ('14', 201703509, '', '', '', 18, 64, -1, 82, '', '', '', '', 'P', 0),
 ('14', 201703510, '', '', '', 14, 25, -1, 39, '', '', '', '', 'P', 0),

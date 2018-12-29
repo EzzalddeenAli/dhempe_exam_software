@@ -67,6 +67,20 @@ $db['default']['stricton'] = FALSE;
 
 $db['2017_1']=$db['default'];
 $db['2017_1']['database'] = 'dhempe_exam_2017_1';
+$db['2017_2']=$db['default'];
+$db['2017_2']['database'] = 'dhempe_exam_2017_2';
+$db['2018_1']=$db['default'];
+$db['2018_1']['database'] = 'dhempe_exam_2018_1';
+$db['2018_2']=$db['default'];
+$db['2018_2']['database'] = 'dhempe_exam_2018_2';
+$db['2019_1']=$db['default'];
+$db['2019_1']['database'] = 'dhempe_exam_2019_1';
+$db['2019_2']=$db['default'];
+$db['2019_2']['database'] = 'dhempe_exam_2019_2';
+$db['2020_1']=$db['default'];
+$db['2020_1']['database'] = 'dhempe_exam_2020_1';
+$db['2020_2']=$db['default'];
+$db['2020_2']['database'] = 'dhempe_exam_2020_2';
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

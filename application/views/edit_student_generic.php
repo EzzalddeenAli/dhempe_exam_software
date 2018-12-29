@@ -93,7 +93,7 @@ if (isset($studentdetail)) {
         $sports_cat = $row->sports_category;
         $ncc_nss_cat =  $row->ncc_nss_category;
         $sports_rew = $row->sports_rewards;
-        $entitle_grace = $row->entitlement_grace_alloc;
+        $entitle_grace = $row->entitlement_grace_alloc; // TODO: ncc_nss_grace_alloc
         $sports_grace = $row->sports_grace_alloc;
         $subj_1 = $row->subj_1;
         $subj_1 .= "/" . $row->subj_3 . "/" . $row->subj_5;
