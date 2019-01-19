@@ -25,9 +25,11 @@
 	
 	
 	$option=array(
-		"1"=>"Final-Marksheet"
+		"1"=>"Final-Marksheet",
 		//,"2"=>"Reval-Marksheet",
 		//"3"=>"Supplementary-Marksheet"
+		"4"=>"Head Count",
+		"5"=>"Filtered Final-Marksheet"
 	);
 	
 	$js ='class="my_select"';

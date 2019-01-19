@@ -81,6 +81,25 @@ $db['2020_1']=$db['default'];
 $db['2020_1']['database'] = 'dhempe_exam_2020_1';
 $db['2020_2']=$db['default'];
 $db['2020_2']['database'] = 'dhempe_exam_2020_2';
-
+$db['2021_1']=$db['default'];
+$db['2021_1']['database'] = 'dhempe_exam_2021_1';
+$db['2021_2']=$db['default'];
+$db['2021_2']['database'] = 'dhempe_exam_2021_2';
+$db['2022_1']=$db['default'];
+$db['2022_1']['database'] = 'dhempe_exam_2022_1';
+$db['2022_2']=$db['default'];
+$db['2022_2']['database'] = 'dhempe_exam_2022_2';
+$db['2023_1']=$db['default'];
+$db['2023_1']['database'] = 'dhempe_exam_2023_1';
+$db['2023_2']=$db['default'];
+$db['2023_2']['database'] = 'dhempe_exam_2023_2';
+$db['2024_1']=$db['default'];
+$db['2024_1']['database'] = 'dhempe_exam_2024_1';
+$db['2024_2']=$db['default'];
+$db['2024_2']['database'] = 'dhempe_exam_2024_2';
+$db['2025_1']=$db['default'];
+$db['2025_1']['database'] = 'dhempe_exam_2025_1';
+$db['2025_2']=$db['default'];
+$db['2025_2']['database'] = 'dhempe_exam_2025_2';
 /* End of file database.php */
 /* Location: ./application/config/database.php */

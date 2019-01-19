@@ -683,7 +683,7 @@ class final_marksheet extends CI_Controller
 
                 //$date=date("F Y");
                 //$date=date('F Y', strtotime(date('Y-m')." -1 month"));
-                $date = " April 2013";
+                $date = "October 2017";
                 /******************PDF**********************/
                 //$mpdf = new mPDF('','',0,'',0,0,5,10,9,9,'L');
                 $mpdf->WriteHTML('<br/><br/><br/><div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:3px;">Dempo Charities Trusts</div>');
@@ -1926,24 +1926,24 @@ class final_marksheet extends CI_Controller
                 }
                 /******************PDF**********************/
                 //$mpdf = new mPDF('','',0,'',0,0,5,10,9,9,'L');
-                $mpdf->WriteHTML('<br/><br/><div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:0px;">Dempo Charities Trusts</div>');
+                $mpdf->WriteHTML('<br/><br/><div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:1400px; margin-left:50%;">Dempo Charities Trusts</div>');
                 $mpdf->WriteHTML('<div style="text-align:center;font-weight:bold; font-size:15px; margin-top:0px; margin-top:2px;">Dhempe College of Arts and Science</div>');
-                $mpdf->WriteHTML('<div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:2px;">Miramar,Panaji,Goa.</div>');
-                $mpdf->WriteHTML('<div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:2px;">Re-Accredited At \'A\' Grade by NAAC</div>');
-                $mpdf->WriteHTML('<div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:3px;">ISO 9001 : 2008 Certified</div>');
+                $mpdf->WriteHTML('<div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:2px; margin-left:50%;">Miramar,Panaji,Goa.</div>');
+                $mpdf->WriteHTML('<div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:2px; margin-left:50%;">Re-Accredited At \'A\' Grade by NAAC</div>');
+                $mpdf->WriteHTML('<div style="text-align:center;font-family:"Times New Roman", Times, serif; font-size:8px; margin-top:3px; margin-left:50%;">ISO 9001 : 2008 Certified</div>');
                 $mpdf->WriteHTML('<div style="text-align:center;font-weight:bold; font-size:15px; margin-top:3px;">(Affiliated to Goa University)</div>');
 
-                $mpdf->WriteHTML('<div style="left:35px;width:720px;height:780px;border:1px solid #000;position:absolute;"></div>');
+                $mpdf->WriteHTML('<div style="left:70px;width:720px;height:780px;border:1px solid #000;position:absolute;"></div>');
                 $mpdf->WriteHTML('<div style="margin-top:-10px;">');
                 $html= '<div style="margin-left:45px;"><p align="right" style="padding:45px;">P.R. No.<u> ' . $register_number . ' </u></p></div>';
                 $mpdf->SetColumns(2, 'J');
                 $mpdf->WriteHTML($html, 2);
                 $mpdf->SetColumns(1, 'J');
 
-                $mpdf->WriteHTML('<h1 align="center" style="margin-top:-10px; font-family:\"Times New Roman\", Times, serif; align:center;">GRADE CERTIFICATE</h1>');
+                $mpdf->WriteHTML('<h1 align="center" style="margin-top:-10px; font-family:\"Times New Roman\", Times, serif; align:center; margin-left:50%;">GRADE CERTIFICATE</h1>');
 
-                $mpdf->WriteHTML('<div style="left:55px;width:40mm;height:40mm;border:1px solid #000;position:absolute;"></div>');
-                $studentDetailsTable = '<table align="left" style="margin-left:30%; margin-top: 10px;">';
+                $mpdf->WriteHTML('<div style="left:85px;width:40mm;height:40mm;border:1px solid #000;position:absolute;"></div>');
+                $studentDetailsTable = '<table align="left" style="margin-left:40%; margin-top: 10px;">';
                 $studentDetailsTableData = '<td>Degree</td>';
                 $studentDetailsTableData = $studentDetailsTableData . '<td style="padding-left:10px;">:'.$print_class_name.'</td>';
                 $studentDetailsTable = $studentDetailsTable . '<tr>'.$studentDetailsTableData.'</tr>';
@@ -1952,7 +1952,7 @@ class final_marksheet extends CI_Controller
                 $studentDetailsTableData = $studentDetailsTableData . '<td style="padding-left:10px;">:'.$print_class_sem.'</td>';
                 $studentDetailsTable = $studentDetailsTable . '<tr>'.$studentDetailsTableData.'</tr>';
 
-                $studentDetailsTableData = '<td>Month & Year Of Examonation</td>';
+                $studentDetailsTableData = '<td>Month & Year Of Examination</td>';
                 $studentDetailsTableData = $studentDetailsTableData . '<td style="padding-left:10px;">:'.$date.'</td>';
                 $studentDetailsTable = $studentDetailsTable . '<tr>'.$studentDetailsTableData.'</tr>';
 
@@ -1970,7 +1970,7 @@ class final_marksheet extends CI_Controller
 
                 ///// printing table start
 
-                $marksTable = '<table border="1" style="border-collapse:collapse;margin-left:45px; margin-top:8% ;text-align:center;width:94%; ">';
+                $marksTable = '<table border="1" style="border-collapse:collapse;margin-left:10%; margin-top:8%; text-align:center;width:94%; ">';
                 $marksTableHeaderRow = '<tr>';
                 $marksTableHeaderRow .= '<td>Sl. No.</td>';
                 $marksTableHeaderRow .= '<td>Course Code</td>';
@@ -2022,7 +2022,7 @@ class final_marksheet extends CI_Controller
                             $resultStatus = "Passes";
                         }
                     }
-                    
+
                     foreach ($pr_marks_structure as $row4) {
                         if ($row2->isa_abs == "") {$isa = $row2->internal;} else { $isa = "0";}
                         if ($row2->see_abs == "") {$see = $row2->theory;} else { $see = "0";}
@@ -2107,7 +2107,7 @@ class final_marksheet extends CI_Controller
                         $maxMarks = $row4->internal_marks+$row4->semester_marks+$pracsMaxMarks;
                         $minMarks = ($row4->internal_marks+$row4->semester_marks+$pracsMaxMarks) * 40 / 100;
                         $obtainedMarks = $sub_total . ' ' . $display_theory_grace . $pracsSymbol;
-                        
+
                         $obtainedMarksToCalculateGradePoints = $sub_total + preg_replace("/[^0-9]/", "", $display_theory_grace);
                         $totalGraceMarksUsed += preg_replace("/[^0-9]/", "", $display_theory_grace);
                         // Calculations for Grade points, Letter Grade and Course Credits start
@@ -2149,7 +2149,7 @@ class final_marksheet extends CI_Controller
 
                         $marksTableRow = '<tr>';
                         $marksTableRow .= '<td>'.($j + 1).'</td>';//sl.no.
-                        $marksTableRow .= '<td></td>';//course code
+                        $marksTableRow .= '<td>'.($row4->subject_type).'</td>';//course code
                         $marksTableRow .= '<td>'.($row4->sub_name).'</td>';//sebject-paper
                         $marksTableRow .= '<td>'.$maxMarks.'</td>';//max marks
                         $marksTableRow .= '<td>'.$minMarks.'</td>';//min marks
@@ -2188,7 +2188,7 @@ class final_marksheet extends CI_Controller
                 unset($result1);
                 unset($result);
 
-                $grandTotal = ($totalGraceMarksUsed == 0)?$finalcal:$finalcal.' +'.$totalGraceMarksUsed.'#';
+                $grandTotal = ($totalGraceMarksUsed == 0)?$finalcal:$finalcal.' +'.$temp_result.'#';
                 $marksTableRow = '<tr>';
                 $marksTableRow .= '<td>'.($j + 1).'</td>';//sl.no.
                 $marksTableRow .= '<td></td>';//course code
@@ -2229,7 +2229,7 @@ class final_marksheet extends CI_Controller
 
                 //// printing dummy table for SGPA,  CGPA, SLG, CLG, NOA
 
-                $otherMarksDetails = '<table align="center" style="margin-top:2%;width:70%;">';
+                $otherMarksDetails = '<table align="center" style="margin-top:2%;margin-left:15%;width:70%;">';
                 $otherMarksDetails .= '<tr>';
                 $otherMarksDetails .= '<td>';
                 $otherMarksDetails .= 'SGPA : '.round($sgpa, 2);
@@ -2243,7 +2243,7 @@ class final_marksheet extends CI_Controller
                 $otherMarksDetails .= '</tr>';
                 $otherMarksDetails .= '<tr>';
                 $otherMarksDetails .= '<td>';
-                $otherMarksDetails .= 'Remark : '.$print_remark.'  :  '.$resultStatus;//removed CGPA
+                $otherMarksDetails .= 'Remark : '.$resultStatus;//removed CGPA
                 $otherMarksDetails .= '</td>';
                 $otherMarksDetails .= '<td>';
                 $otherMarksDetails .= '';//cummulative letter grade removed
@@ -2255,7 +2255,7 @@ class final_marksheet extends CI_Controller
 
 
                 // printing dummy table for EB, CB, DOD, DOI
-                $marksheetDeclarationDetials = '<table style="margin-left:45px;width:70%;margin-top:2%;">';
+                $marksheetDeclarationDetials = '<table style="margin-left:45px;width:70%;margin-top:2%;margin-left:15%">';
                 $marksheetDeclarationDetials .= '<tr>';
                 $marksheetDeclarationDetials .= '<td>';
                 $marksheetDeclarationDetials .= 'Entered By : '.$entered_by;
@@ -2274,14 +2274,14 @@ class final_marksheet extends CI_Controller
                 $marksheetDeclarationDetials .= '</tr>';
                 $marksheetDeclarationDetials .= '</table>';
                 $mpdf->WriteHTML($marksheetDeclarationDetials);
-                    
+
                 // printing dummy table for EB, CB, DOD, DOI END
 
                 // printing medium of instruction
-                $mediumOfInstruction = '<div style="margin-left:45px; margin-top:5%; font-size:15px;font-weight:bold;">MEDIUM OF INSTRUCTION :- ENGLISH </div>';
+                $mediumOfInstruction = '<div style="margin-left:40px; margin-top:5%; margin-left:20%; font-size:15px;font-weight:bold;">MEDIUM OF INSTRUCTION :- ENGLISH </div>';
                 $mpdf->WriteHTML($mediumOfInstruction);
                 // printing principal
-                $principal = '<div align="right" style="margin-top:3%;margin-right:15%; font-size:15px;">PRINCIPAL</div>';
+                $principal = '<div align="right" style="margin-top:3%;margin-right:10%; font-size:15px;">PRINCIPAL</div>';
                 $mpdf->WriteHTML($principal);
 
 
@@ -2302,15 +2302,15 @@ class final_marksheet extends CI_Controller
 				// 			');
 
                 $mpdf->WriteHTML('
-							<div style="margin-left:45px; font-size:7px; ">ISA=Intra Semester Assessment.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEE= Semester End Examination.</div>
+							<div style="margin-left:75px; font-size:7px; ">ISA=Intra Semester Assessment.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEE= Semester End Examination.</div>
 							');
 
                 $mpdf->WriteHTML('
-							<div style="margin-left:45px; margin-top:1px; font-size:7px;">#= NSS/NCC/Sports/Cultural/Activities. 	$= Grace	ABS=Absent; 	E=Exemption;	N=No Exemption </div>
+							<div style="margin-left:75px; margin-top:1px; font-size:7px;">#= NSS/NCC/Sports/Cultural/Activities. 	$= Grace	ABS=Absent; 	E=Exemption;	N=No Exemption </div>
 							');
 
                 $mpdf->WriteHTML('
-							<div style="margin-left:45px; margin-top:1px; font-size:7px;">P=Pass 	F; Fails +: - Marks carried	NA-Not Applicable</div>
+							<div style="margin-left:75px; margin-top:1px; font-size:7px;">P=Pass 	F; Fails +: - Marks carried	NA-Not Applicable</div>
                             ');
 
 

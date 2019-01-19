@@ -16,7 +16,6 @@
         public $temporary_subject=array();		public $value_priority;
 		public $stream;							public $stream_tbl_name;
 		public $semester_stream;
-    public $check_number;
 
 
         //Rule 2 for inner head and total marks
@@ -929,11 +928,9 @@
             global $max_agg_marks;              global $subject;
             global $fail;                       global $register_number;
             global $max_grace_for_entitlement;  global $stream_tbl_name;
-            global $check_number;
 
             //$this->no_of_subject_pass_fail();
             $this->no_of_subject_pass_fail_check();
-            //echo "$check_number";
 
 
 			foreach($fail as $key=>$value){
@@ -976,8 +973,8 @@
 
 							$dummy7=$dummy5-$max_grace_for_entitlement;
 
-							if(($dummy >= 0)&&($max_grace_for_entitlement >= 0)&&($grace_required <= $marks_per_sub )&&($check_number <= 1)) {
-               //echo "<br/>I AM IN CASE 1";
+							if(($dummy >= 0)&&($max_grace_for_entitlement >= 0)&&($grace_required <= $marks_per_sub )){
+                //echo "<br/>I AM IN CASE 1";
                                 $subject[$key]["Total_marks"]=$subject[$key]["Total_marks"]+$grace_required;
                                 $max_grace_for_entitlement-=$grace_required;
 
@@ -994,7 +991,7 @@
 
                            }
 
-						   else if(($dummy3 >= 0) &&($dummy2 >= $subject[$key]["Min_theory"])&&($check_number <= 1)) {
+						   else if(($dummy3 >= 0) &&($dummy2 >= $subject[$key]["Min_theory"])){
 						   		//echo "<br/>I AM IN CASE 2";
 								//echo "<br/>Sub=".$subject[$key]["sub_id"];
 								//echo $grace_required;
@@ -1013,23 +1010,24 @@
 								$this->home1->updateMarkInnerHead($marks_update2,$stream_tbl_name);
 						   }
 
-						   else if(($max_grace_for_entitlement >= 0)&&($check_number > 1)&&($grace_required <= $marks_per_sub)&&($grace_required <= 5)) {
+						   else if(($max_grace_for_entitlement > 0)&&($max_grace_for_entitlement < 11)&&($dummy4 >=$subject[$key]["Min_theory"])){
 
 								//echo "<br/>I AM IN CASE 3";
 								//echo "<br/>Sub=".$subject[$key]["sub_id"];
 								//echo $grace_required;
-                $subject[$key]["Total_marks"]=$subject[$key]["Total_marks"]+$grace_required;
-                $max_grace_for_entitlement-=$grace_required;
+						   		$subject[$key]["Total_marks"]=$subject[$key]["Total_marks"]+$max_grace_for_entitlement;
+                                $temp_value=$max_grace_for_entitlement;
+								$max_grace_for_entitlement-=$max_grace_for_entitlement;
 
-                $sub_priority=$subject[$key]["sub_id"];
+								$sub_priority=$subject[$key]["sub_id"];
 
-                $marks_update['symbol']=array('activity_symbol'=>'+ '.$grace_required.'#');
-                $marks_update['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
-                $this->home1->updateSportsMarks($marks_update,$stream_tbl_name);
+                                $marks_update['symbol']=array('activity_symbol'=>'+ '.$temp_value.'#');
+                                $marks_update['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
+                                $this->home1->updateSportsMarks($marks_update,$stream_tbl_name);
 
-                $marks_update2['symbol']=array('gen_the_symbol'=>'+ '.$grace_required.'#');
-                $marks_update2['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
-                $this->home1->updateMarkInnerHead($marks_update2,$stream_tbl_name);
+								$marks_update2['symbol']=array('gen_the_symbol'=>'+ '.$temp_value.'#');
+								$marks_update2['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
+								$this->home1->updateMarkInnerHead($marks_update2,$stream_tbl_name);
 
 
 						   }
@@ -1064,8 +1062,7 @@
 
 							$dummy7=$dummy5-$max_grace_for_entitlement;
 
-
-							if(($dummy >= 0)&&($max_grace_for_entitlement >= 0)&&($grace_required <= $marks_per_sub )&&($check_number <= 1)) {
+							if(($dummy >= 0)&&($max_grace_for_entitlement >= 0)&&($grace_required <= $marks_per_sub )){
                 //echo "<br/>I AM IN else CASE 1";
                                 $subject[$key]["Total_marks_grace"]=$subject[$key]["Total_marks_grace"]+$grace_required;
                                 $max_grace_for_entitlement-=$grace_required;
@@ -1083,7 +1080,7 @@
 
                            }
 
-						   else if(($dummy3 >= 0) &&($dummy2 >= $subject[$key]["Min_theory"])&&($check_number <= 1)) {
+						   else if(($dummy3 >= 0) &&($dummy2 >= $subject[$key]["Min_theory"])){
 						   		//echo "<br/>I AM IN else CASE 2";
 								//echo "<br/>Sub=".$subject[$key]["sub_id"];
 								//echo $grace_required;
@@ -1102,25 +1099,24 @@
 								$this->home1->updateMarkInnerHead($marks_update2,$stream_tbl_name);
 						   }
 
-
-
-               else if(($max_grace_for_entitlement >= 0)&&($check_number > 1)&&($grace_required <= $marks_per_sub)&&($grace_required <= 5)) {
+						   else if(($max_grace_for_entitlement > 0)&&($max_grace_for_entitlement < 11)&&($dummy4 >=$subject[$key]["Min_theory"])){
 
 								//echo "<br/>I AM IN else CASE 3";
 								//echo "<br/>Sub=".$subject[$key]["sub_id"];
 								//echo $grace_required;
-                $subject[$key]["Total_marks_grace"]=$subject[$key]["Total_marks_grace"]+$grace_required;
-                $max_grace_for_entitlement-=$grace_required;
+						   		$subject[$key]["Total_marks_grace"]=$subject[$key]["Total_marks_grace"]+$max_grace_for_entitlement;
+                                $temp_value=$max_grace_for_entitlement;
+								$max_grace_for_entitlement-=$max_grace_for_entitlement;
 
-                $sub_priority=$subject[$key]["sub_id"];
+								$sub_priority=$subject[$key]["sub_id"];
 
-                $marks_update['symbol']=array('activity_symbol'=>'+ '.$grace_required.'#');
-                $marks_update['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
-                $this->home1->updateSportsMarks($marks_update,$stream_tbl_name);
+                                $marks_update['symbol']=array('activity_symbol'=>'+ '.$temp_value.'#');
+                                $marks_update['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
+                                $this->home1->updateSportsMarks($marks_update,$stream_tbl_name);
 
-                $marks_update2['symbol']=array('gen_the_symbol'=>'+ '.$grace_required.'#');
-                $marks_update2['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
-                $this->home1->updateMarkInnerHead($marks_update2,$stream_tbl_name);
+								$marks_update2['symbol']=array('gen_the_symbol'=>'+ '.$temp_value.'#');
+								$marks_update2['mark']=array('pr_number'=>$register_number,'sub_id'=>$sub_priority);
+								$this->home1->updateMarkInnerHead($marks_update2,$stream_tbl_name);
 
 
 						   }
@@ -1280,10 +1276,9 @@
             global $numberOfSubject;	global $stream_tbl_name;
             global $subject;            global $pass;
             global $fail;               global $sub_has_practicle;
-            global $register_number;    global $check_number;
+            global $register_number;
 
 			$fail=array();
-      $check_number = 0;
 
             for($i=0;$i<count($subject);$i++){
                 if($subject[$i]["Practcal_marks"] == -1){
@@ -1293,8 +1288,7 @@
                         $fail[$i]=$subject[$i]["Min_theory"]-$subject[$i]["Total_marks"];
 						                  //student pass than update pass status
 						            $this->home1->passStatus($subject[$i]["sub_id"],$register_number,$stream_tbl_name,'F');
-                        //echo "<br/>fail case";
-                        $check_number = $check_number + 1;
+                        //echo "fail case";
                     }
                     else{
                       //echo "<br/> no prac else";
@@ -1303,8 +1297,7 @@
 
 						                $fail[]=999;
                             $pass[$i]=$subject[$i]["Total_marks"];
-                            //echo "<br/>pass case";
-
+                            //echo "pass case";
                     }
                 }
                 else{
@@ -1318,12 +1311,9 @@
                       //echo "<br/> in prac case 1";
                         $fail[]=999;
 						                  //student pass than update pass status
-
 						            $this->home1->passStatus($subject[$i]["sub_id"],$register_number,$stream_tbl_name,'P');
                         $pass[$i]=$subject[$i]["Total_marks_grace"];
                         //echo "pass case with prac";
-
-
                     }
                     else{
                       //echo "<br/> in prac case 2";
@@ -1337,8 +1327,7 @@
 
 						                  //student pass than update pass status
 						            $this->home1->passStatus($subject[$i]["sub_id"],$register_number,$stream_tbl_name,'F');
-                        //echo "<br/>fail case with prac";
-                        $check_number = $check_number + 1;
+                        //echo "fail case with prac";
                       }
                 }
             }
